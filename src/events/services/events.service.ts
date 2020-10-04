@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ScheduleEvent, ScheduleEventStatus } from '../models/events.model';
-import { ScheduleEventDto } from '../dto/create-event.dto';
+import { CreateScheduleEventDto } from '../dto/create-event.dto';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
@@ -8,7 +8,7 @@ export class EventsService {
   constructor() {
   }
 
-  createEvent(eventDto: ScheduleEventDto) {
+  createEvent(eventDto: CreateScheduleEventDto) {
     const event: ScheduleEvent = {
       id: uuidv4(),
       ...eventDto,

@@ -1,4 +1,5 @@
-export class ScheduleEventDto {
+export class CreateScheduleEventDto {
+  name: string;
   scheduledDate: string;
   endDate: string;
   startTime: string;

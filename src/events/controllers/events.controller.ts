@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { EventsService } from '../services/events.service';
 import { ScheduleEvent } from '../models/events.model';
-import { ScheduleEventDto } from '../dto/create-event.dto';
+import { CreateScheduleEventDto } from '../dto/create-event.dto';
 
 @Controller('events')
 export class EventsController {
@@ -19,7 +19,7 @@ export class EventsController {
   }
 
   @Post()
-  createEvent(@Body() body: ScheduleEventDto) {
+  createEvent(@Body() body: CreateScheduleEventDto) {
     return this.eventsService.createEvent(body);
   }
 }
