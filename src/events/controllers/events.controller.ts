@@ -1,7 +1,8 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { EventsService } from '../services/events.service';
 import { ScheduleEvent } from '../models/events.model';
 import { CreateScheduleEventDto } from '../dto/create-event.dto';
+import { GetEventsFilterDto } from '../dto/get-events-filter.dto';
 
 @Controller('events')
 export class EventsController {
@@ -9,7 +10,10 @@ export class EventsController {
   }
 
   @Get()
-  getEvents(): ScheduleEvent[] {
+  getEvents(@Query() filterDto: GetEventsFilterDto): ScheduleEvent[] {
+    if (Object.keys(filterDto).length) {
+
+    }
     return;
   }
 
