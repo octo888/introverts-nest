@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ScheduleEvent, ScheduleEventStatus } from '../models/events.model';
+import { IScheduleEvent, ScheduleEventStatus } from '../models/events.model';
 import { CreateScheduleEventDto } from '../dto/create-event.dto';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -9,7 +9,7 @@ export class EventsService {
   }
 
   createEvent(eventDto: CreateScheduleEventDto) {
-    const event: ScheduleEvent = {
+    const event: IScheduleEvent = {
       id: uuidv4(),
       ...eventDto,
       createdDate: new Date().toISOString(),

@@ -1,4 +1,4 @@
-export interface ScheduleEvent {
+export interface IScheduleEvent {
   id: string;
   name: string;
   createdDate: string;
