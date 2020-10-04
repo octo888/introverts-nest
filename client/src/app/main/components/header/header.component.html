@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="d-block d-sm-none" >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="w-100 justify-content-start d-flex">
+    <a routerLink="/">{{'welcome' | translate}}</a>
+    <a class="d-none d-sm-flex" routerLink="/events">{{'events' | translate}}</a>
+  </div>
+
+  <span class="example-spacer"></span>
+  <button mat-icon-button (click)="onLangChange()"  class="text-uppercase">
+    {{currLang}}
+  </button>
+</mat-toolbar>
+<mat-menu #menu="matMenu">
+  <button routerLink="/events" mat-menu-item>
+    <mat-icon>event</mat-icon>
+    <span class="text-uppercase">{{'events' | translate}}</span>
+  </button>
+</mat-menu>
+

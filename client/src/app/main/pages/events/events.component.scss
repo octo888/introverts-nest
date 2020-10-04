@@ -1,0 +1,27 @@
+.mat-list-item {
+  color: #212529;
+  font-size: 24px;
+  margin-bottom: 20px;
+  background-color: #e8e8e8;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.mat-line {
+  flex-wrap: wrap;
+
+}
+
+.mat-divider {
+  border-top-color:  #212529;
+}
+
+.mat-subheader {
+  color: #212529;
+  font-size: 28px;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+}

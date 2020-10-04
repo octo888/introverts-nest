@@ -1,0 +1,20 @@
+<mat-list >
+  <div class="text-uppercase pl-0" mat-subheader>{{'events' | translate}}</div>
+  <mat-list-item class="cursor-pointer" *ngFor="let event of list" routerLink="/event/{{event.id}}">
+    <mat-icon mat-list-icon>event</mat-icon>
+    <div mat-line class="d-flex justify-content-around">
+      <span>
+        {{event.date | date}}
+      </span>
+      <span>
+         {{event.name}}
+      </span>
+    </div>
+    <div mat-line class="d-flex justify-content-around">
+      <span>{{event.subtitle}}</span>
+      <span>
+        {{event.startTime + ' - ' + event.endTime}} | {{event.description}}
+      </span>
+    </div>
+  </mat-list-item>
+</mat-list>
