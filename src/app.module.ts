@@ -8,7 +8,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
   imports: [
     EventsModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../../client/dist', 'client'),
+      rootPath: join(__dirname, '../client/dist', 'client'),
     }),
   ],
   controllers: [],
