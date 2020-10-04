@@ -1,7 +1,7 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { EventsService } from '../services/events.service';
 import { ScheduleEvent } from '../models/events.model';
-import { v4 as uuidv4 } from 'uuid';
+import { ScheduleEventDto } from '../dto/create-event.dto';
 
 @Controller('events')
 export class EventsController {
@@ -14,14 +14,12 @@ export class EventsController {
   }
 
   @Get('/:id')
-  getEventById(): ScheduleEvent {
+  getEventById(@Param('id') id: string): ScheduleEvent {
     return;
   }
 
   @Post()
-  createEvent(@Body() body: ScheduleEvent) {
-    const event: ScheduleEvent = {
-      id: uuidv4() 
-    }
+  createEvent(@Body() body: ScheduleEventDto) {
+    return this.eventsService.createEvent(body);
   }
 }

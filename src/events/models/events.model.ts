@@ -2,6 +2,7 @@ export interface ScheduleEvent {
   id: string;
   createdDate: string;
   scheduledDate: string;
+  endDate: string;
   startTime: string;
   endTime: string;
   location: string;
