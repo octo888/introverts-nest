@@ -1,10 +1,18 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryColumn } from 'typeorm';
 import { ScheduleEventStatus } from '../models/events.model';
 
 @Entity()
 export class ScheduleEvent extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+
+  constructor(args?: any) {
+    super();
+    if (Boolean(args)) {
+      Object.assign(this, args);
+    }
+  }
+
+  @PrimaryColumn()
+  id: string;
 
   @Column()
   name: string;
@@ -36,11 +44,11 @@ export class ScheduleEvent extends BaseEntity {
   @Column()
   mainImg: string;
 
-  @Column()
-  images: string[];
+  @Column({array: true})
+  images: string;
 
-  @Column()
-  registeredEmails: string[];
+  @Column({array: true})
+  registeredEmails: string;
 
   @Column()
   status: ScheduleEventStatus
